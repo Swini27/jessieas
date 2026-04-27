@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Event details and ticket booking for Jessiea's Cafe.">
+  <title>Event Details — Jessiea's Cafe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ======= Header / Navbar ======= -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">Jessiea's <span>Cafe</span></a>
+      <nav class="header__nav" id="navbar">
+        <a href="about.html" class="nav__link">About</a>
+        <a href="menu.html" class="nav__link">Menu</a>
+        <a href="events.html" class="nav__link nav__link--active">Events</a>
+      </nav>
+      <button class="header__hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ======= Event Detail Layout ======= -->
+  <main class="event-detail-page">
+    <div class="event-detail-page__inner" id="event-detail-target">
+      <!-- Content injected by JS -->
+      <div class="loader">Loading event details...</div>
+    </div>
+  </main>
+
+  <!-- ======= Footer ======= -->
+  <footer class="footer" id="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="header__logo">Jessiea's <span>Cafe</span></a>
+        <p class="footer__tagline">Good food · Great vibes</p>
+      </div>
+
+      <div class="footer__info">
+        <div class="footer__section">
+          <h4 class="footer__heading">Visit Us</h4>
+          <p class="footer__text">Dn Nagar Andheri West, <br> Mumbai, Maharashtra 400053</p>
+        </div>
+
+        <div class="footer__section">
+          <h4 class="footer__heading">Follow Us</h4>
+          <a href="https://www.instagram.com/jessieascafe/" class="footer__link" target="_blank">@jessieascafe</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Jessiea's Cafe. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    /* ======= Navbar Logic ======= */
+    const hamburger = document.getElementById('hamburger');
+    const navbar = document.getElementById('navbar');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navbar.classList.toggle('open');
+    });
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    /* ======= Event Data ======= */
+    const eventsData = {
+      'live-fridays': {
+        title: 'Soulful Fridays with District',
+        category: 'Live Music',
+        image: 'events/event1.png',
+        date: 'Every Friday | 8 PM onwards',
+        longDescription: `
+          <p>Kickstart your weekend with "District," our acclaimed resident ensemble known for their raw vocals and acoustic brilliance. At Jessiea's, Fridays are about more than just music; they're about an atmosphere that lets you breathe and connect.</p>
+          <p>Expect a curated setlist of unplugged hits, ranging from indie-soul to contemporary acoustic magic, filling the room as you enjoy our signature Japanese-Italian fusion dinner.</p>
+          <p>These evenings are designed for lovers of high-quality live music and premium dining. With the warm, ambient lighting of our Live Lounge and the soul-stirring melodies of District, your Friday nights in Mumbai will never be the same.</p>
+        `,
+        meta: `
+          <div class="event-meta-card">
+            <div class="event-meta-card__item"><strong>Location:</strong> 7 Bungalows, Andheri West</div>
+            <div class="event-meta-card__item"><strong>Entry:</strong> Cover charge applicable after 9 PM</div>
+            <div class="event-meta-card__item"><strong>Dress Code:</strong> Smart Casual</div>
+          </div>
+        `
+      },
+      'brunch-vocals': {
+        title: 'Weekend Brunch & Acoustic Vocals',
+        category: 'Brunch Experience',
+        image: 'events/event2.png',
+        date: 'Every Sunday | 12 PM - 4 PM',
+        longDescription: `
+          <p>Our Sundays are dedicated to the simple joy of a slow brunch. We've paired our specialized Brunch Menu—featuring everything from delicate carpaccios to fluffy Japanese pancakes—with soft, live acoustic sets.</p>
+          <p>It's the perfect setting for long conversations with friends or a quiet, sun-drenched meal with family. The music is designed to complement the vibe, never overpowering it.</p>
+          <p>Join us for a sensory journey where the taste of our chef's signature creations meets the soothing sounds of unplugged performances. It's the ultimate Mumbai weekend escape.</p>
+        `,
+        meta: `
+          <div class="event-meta-card">
+            <div class="event-meta-card__item"><strong>Location:</strong> Main Dining Hall</div>
+            <div class="event-meta-card__item"><strong>Offer:</strong> Bottomless Refreshments available</div>
+          </div>
+        `
+      },
+      'guest-artist': {
+        title: 'Live Lounge: Simran Choudhary',
+        category: 'Guest Artist Spotlight',
+        image: 'events/event3.png',
+        date: 'Featured Event | Limited Seats',
+        longDescription: `
+          <p>Jessiea's periodically hosts "The Live Lounge Spotlight," featuring some of the biggest names in the industry in an intimate, unplugged setting. Our past events have featured the incredible Simran Choudhary.</p>
+          <p>Known for her playback work in major blockbusters like "Stree 2" and "Dhurandhar," Simran brings a level of talent and energy that creates memories for a lifetime. These are high-demand evenings with extremely limited seating.</p>
+          <p>This is a rare opportunity to see an artist of this caliber in such a personal, intimate space. Don't miss your chance to be part of an extraordinary evening of music.</p>
+        `,
+        meta: `
+          <div class="event-meta-card">
+            <div class="event-meta-card__item"><strong>Status:</strong> High Demand</div>
+            <div class="event-meta-card__item"><strong>Entry:</strong> Pre-booking essential</div>
+          </div>
+        `
+      }
+    };
+
+    /* ======= Page Logic ======= */
+    const urlParams = new URLSearchParams(window.location.search);
+    const eventId = urlParams.get('id');
+    const target = document.getElementById('event-detail-target');
+
+    if (eventId && eventsData[eventId]) {
+      const data = eventsData[eventId];
+      document.title = `${data.title} — Jessiea's Cafe`;
+      
+      target.innerHTML = `
+        <div class="detail-container">
+          <div class="detail-hero">
+            <img src="${data.image}" alt="${data.title}">
+            <div class="detail-hero__banner">
+              <span class="event-card__category">${data.category}</span>
+              <h1 class="detail-title">${data.title}</h1>
+              <div class="detail-date">${data.date}</div>
+            </div>
+          </div>
+
+          <div class="detail-main">
+            <div class="detail-content">
+              <h2 class="detail-subtitle">About the Event</h2>
+              <div class="detail-body">${data.longDescription}</div>
+              
+              <div class="ticket-box">
+                <h3>Join the Experience</h3>
+                <p>Ready to be part of this unforgettable evening? Book your spot now.</p>
+                <div class="ticket-actions">
+                  <a href="#" class="btn btn--primary">Buy Tickets</a>
+                  <a href="events.html" class="btn btn--outline">Back to All Events</a>
+                </div>
+              </div>
+            </div>
+
+            <aside class="detail-sidebar">
+              <div class="sticky-sidebar">
+                <h3 class="detail-sidebar__title">Event Info</h3>
+                ${data.meta}
+                <div class="detail-sidebar__footer">
+                  <p>Follow us for updates</p>
+                  <a href="#">@JessieasCafe</a>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      `;
+    } else {
+      target.innerHTML = `
+        <div class="error-view">
+          <h2>Event not found</h2>
+          <p>The event you are looking for does not exist or has already passed.</p>
+          <a href="events.html" class="btn btn--primary">Back to Events</a>
+        </div>
+      `;
+    }
+  </script>
+
+</body>
+
+</html>

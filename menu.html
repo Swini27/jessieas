@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the menu at Jessiea's Cafe — brunch, food, beverages, and bar.">
+  <title>Menu — Jessiea's Cafe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ======= Header / Navbar ======= -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">Jessiea's <span>Cafe</span></a>
+      <nav class="header__nav" id="navbar">
+        <a href="about.html" class="nav__link">About</a>
+        <a href="menu.html" class="nav__link nav__link--active">Menu</a>
+        <a href="events.html" class="nav__link">Events</a>
+      </nav>
+      <button class="header__hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ======= Menu Layout ======= -->
+  <main class="menu-page">
+    <div class="menu-page__inner">
+
+      <h1 class="menu-page__heading">Menu</h1>
+
+      <!-- Brunch -->
+      <section class="menu-section reveal reveal--zoom">
+        <h2 class="menu-section__title">Brunch</h2>
+        <div class="carousel-wrapper">
+          <div class="carousel" id="carousel-brunch">
+            <div class="carousel__track">
+              <div class="carousel__item" onclick="openLightbox(this)"><img src="menu/brunch/1.avif"
+                  alt="Brunch item 1"></div>
+              <div class="carousel__item" onclick="openLightbox(this)"><img src="menu/brunch/2.avif"
+                  alt="Brunch item 2"></div>
+              <div class="carousel__item" onclick="openLightbox(this)"><img src="menu/brunch/3.avif"
+                  alt="Brunch item 3"></div>
+              <div class="carousel__item" onclick="openLightbox(this)"><img src="menu/brunch/4.avif"
+                  alt="Brunch item 4"></div>
+            </div>
+          </div>
+          <button class="carousel__btn carousel__btn--prev" onclick="moveCarousel('brunch', -1)">&#10229;</button>
+          <button class="carousel__btn carousel__btn--next" onclick="moveCarousel('brunch', 1)">&#10230;</button>
+        </div>
+      </section>
+
+      <!-- Food -->
+      <section class="menu-section reveal reveal--zoom">
+        <h2 class="menu-section__title">Food</h2>
+        <div class="carousel-wrapper">
+          <div class="carousel" id="carousel-food">
+            <div class="carousel__track">
+              <div class="carousel__item" onclick="openLightbox(this)"><img src="menu/food/1.avif" alt="Food item 1">
+              </div>
+              <div class="carousel__item" onclick="openLightbox(this)"><img src="menu/food/2.avif" alt="Food item 2">
+              </div>
+              <div class="carousel__item" onclick="openLightbox(this)"><img src="menu/food/3.avif" alt="Food item 3">
+              </div>
+              <div class="carousel__item" onclick="openLightbox(this)"><img src="menu/food/4.avif" alt="Food item 4">
+              </div>
+              <div class="carousel__item" onclick="openLightbox(this)"><img src="menu/food/5.avif" alt="Food item 5">
+              </div>
+              <div class="carousel__item" onclick="openLightbox(this)"><img src="menu/food/6.avif" alt="Food item 6">
+              </div>
+              <div class="carousel__item" onclick="openLightbox(this)"><img src="menu/food/7.avif" alt="Food item 7">
+              </div>
+              <div class="carousel__item" onclick="openLightbox(this)"><img src="menu/food/8.avif" alt="Food item 8">
+              </div>
+              <div class="carousel__item" onclick="openLightbox(this)"><img src="menu/food/9.avif" alt="Food item 9">
+              </div>
+              <div class="carousel__item" onclick="openLightbox(this)"><img src="menu/food/10.avif" alt="Food item 10">
+              </div>
+              <div class="carousel__item" onclick="openLightbox(this)"><img src="menu/food/11.avif" alt="Food item 11">
+              </div>
+              <div class="carousel__item" onclick="openLightbox(this)"><img src="menu/food/12.avif" alt="Food item 12">
+              </div>
+            </div>
+          </div>
+          <button class="carousel__btn carousel__btn--prev" onclick="moveCarousel('food', -1)">&#10229;</button>
+          <button class="carousel__btn carousel__btn--next" onclick="moveCarousel('food', 1)">&#10230;</button>
+        </div>
+      </section>
+
+      <!-- Beverages -->
+      <section class="menu-section reveal reveal--zoom">
+        <h2 class="menu-section__title">Beverages</h2>
+        <div class="carousel-wrapper">
+          <div class="carousel" id="carousel-beverages">
+            <div class="carousel__track">
+              <div class="carousel__item" onclick="openLightbox(this)"><img src="menu/beverages/1.avif"
+                  alt="Beverage item 1"></div>
+              <div class="carousel__item" onclick="openLightbox(this)"><img src="menu/beverages/2.avif"
+                  alt="Beverage item 2"></div>
+            </div>
+          </div>
+          <button class="carousel__btn carousel__btn--prev" onclick="moveCarousel('beverages', -1)">&#10229;</button>
+          <button class="carousel__btn carousel__btn--next" onclick="moveCarousel('beverages', 1)">&#10230;</button>
+        </div>
+      </section>
+
+      <!-- Bar -->
+      <section class="menu-section reveal reveal--zoom">
+        <h2 class="menu-section__title">Bar</h2>
+        <div class="carousel-wrapper">
+          <div class="carousel" id="carousel-bar">
+            <div class="carousel__track">
+              <div class="carousel__item" onclick="openLightbox(this)"><img src="menu/bar/1.avif" alt="Bar item 2">
+              </div>
+            </div>
+          </div>
+          <button class="carousel__btn carousel__btn--prev" onclick="moveCarousel('bar', -1)">&#10229;</button>
+          <button class="carousel__btn carousel__btn--next" onclick="moveCarousel('bar', 1)">&#10230;</button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ======= Lightbox Modal ======= -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox__close" onclick="closeLightbox()">&times;</button>
+    <button class="lightbox__btn lightbox__btn--prev" onclick="changeImage(-1)">&#10229;</button>
+    <button class="lightbox__btn lightbox__btn--next" onclick="changeImage(1)">&#10230;</button>
+    <div class="lightbox__content">
+      <img src="" id="lightbox-img" alt="Expanded view">
+    </div>
+  </div>
+
+  <!-- ======= Footer ======= -->
+  <footer class="footer" id="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="header__logo">Jessiea's <span>Cafe</span></a>
+        <p class="footer__tagline">Good Vibes Only!</p>
+      </div>
+
+      <div class="footer__info">
+        <div class="footer__section">
+          <h4 class="footer__heading">Visit Us</h4>
+          <p class="footer__text">Dn Nagar Andheri West, <br> Mumbai, Maharashtra 400053</p>
+        </div>
+
+        <div class="footer__section">
+          <h4 class="footer__heading">Follow Us</h4>
+          <a href="https://www.instagram.com/jessieascafe/" class="footer__link" target="_blank">@jessieascafe</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Jessiea's Cafe. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navbar = document.getElementById('navbar');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navbar.classList.toggle('open');
+    });
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 40);
+    });
+    document.querySelectorAll('.nav__link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navbar.classList.remove('open');
+      });
+    });
+
+    // Carousel navigation
+    function moveCarousel(id, direction) {
+      const carousel = document.getElementById(`carousel-${id}`);
+      const scrollAmount = carousel.offsetWidth * 0.8;
+      carousel.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+
+    // Lightbox logic
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    let currentImages = [];
+    let currentIndex = 0;
+
+    function openLightbox(element) {
+      // Get all images in the same section
+      const section = element.closest('.menu-section');
+      currentImages = Array.from(section.querySelectorAll('.carousel__item img')).map(img => img.src);
+      const clickedImg = element.querySelector('img').src;
+      currentIndex = currentImages.indexOf(clickedImg);
+      
+      updateLightboxImage();
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function updateLightboxImage() {
+      lightboxImg.src = currentImages[currentIndex];
+    }
+
+    function changeImage(direction) {
+      currentIndex += direction;
+      if (currentIndex < 0) currentIndex = currentImages.length - 1;
+      if (currentIndex >= currentImages.length) currentIndex = 0;
+      updateLightboxImage();
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Keyboard navigation
+    window.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'ArrowLeft') changeImage(-1);
+      if (e.key === 'ArrowRight') changeImage(1);
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    // Close on background click
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    /* ── Scroll Reveal Observer ── */
+    const observerOptions = {
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+
+</html>
